@@ -81,5 +81,5 @@ def shortened_tweet_truncator(string)
       end
       return_tweet.insert(137, '...')
     end
-  puts return_tweet 
+  return_tweet 
 end
