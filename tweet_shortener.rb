@@ -75,9 +75,11 @@ def shortened_tweet_truncator(string)
       end
     end
     return_tweet = short_tweet.join(" ")
-  until return_tweet.length == 137
-    return_tweet.chop!
-  end
-    return_tweet.insert(134, '...')
-  return_tweet
+    if return_tweet.length > 140
+      until return_tweet.length == 137
+       return_tweet.chop!
+      end
+      return_tweet.insert(137, '...')
+    end
+  puts return_tweet 
 end
